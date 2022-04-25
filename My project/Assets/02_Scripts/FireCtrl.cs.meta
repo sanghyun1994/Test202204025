@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 80615c26790f2814c9dd21c2702b5298
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - bullet: {instanceID: 0}
+  - firepos: {instanceID: 0}
+  - fireSfx: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
