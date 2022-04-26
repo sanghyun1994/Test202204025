@@ -18,6 +18,8 @@ public class FireCtrl : MonoBehaviour
     private new AudioSource audio;
     private MeshRenderer muzzleFlash;
 
+    private RaycastHit hit;
+
 
     void Start()
     {
@@ -32,9 +34,21 @@ public class FireCtrl : MonoBehaviour
     
     void Update()
     {
+        // 레이캐스트를 시각적으로 표시하기 위해 사용
+        Debug.DrawRay(firepos.position, firepos.forward * 10.0f, Color.green);
+
+
         if (Input.GetMouseButtonDown(0))
         {
             Fire();
+
+            // 레이를 쏨
+            if (Physics.Raycast(firepos.position, firepos.forward, out hit, 10.0f, 1 << 6))
+            {
+                Debug.Log($"HIT={hit.transform.name}");
+                hit.transform.GetComponent<MonsterCtrl>()?.OnDamage(hit.point, hit.normal);
+
+            }
 
         }
 
